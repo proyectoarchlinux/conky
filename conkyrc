@@ -1,0 +1,97 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+background no
+use_xft yes
+xftfont Terminus:size=8
+xftalpha 0.8
+update_interval 1
+total_run_times 0
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 300
+maximum_width 300
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color white
+default_shade_color red
+default_outline_color yellow
+alignment top_right
+gap_x 15
+gap_y 70
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale no
+use_spacer yes
+
+TEXT
+${font openlogos:size=30}Archlinux${font openlogos:size=22}
+${voffset -90}
+${color cyan}
+${font}
+${font Arial:bold:size=10}${color Red1}SISTEMA ${color white} ${hr 2}
+$font${color white}$sysname $kernel $alignr $machine
+
+AMD Ryzen 7 2700X  $alignr${freq_g cpu0}Ghz
+
+Uptime $alignr${uptime}
+
+Sistema de archivos $alignr${fs_type}
+
+${font Arial:bold:size=10}${color Red1}PROCESOS ${color white}${hr 2}
+$font${color White}CPU1 ${cpu cpu1}% ${cpubar cpu1}
+
+CPU2 ${cpu cpu2}% ${cpubar cpu2}
+
+${font Arial:bold:size=10}${color Red1}MEMORIA ${color white}${hr 2}
+$font${color white}MEM $alignc $mem / $memmax $alignr $memperc%
+$membar
+
+${font Arial:bold:size=10}${color Red1}HDD ${color white}${hr 2}
+$font${color white}/home $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_free_perc /home}%
+${fs_bar /home}
+
+/disk $alignc ${fs_used /media/disk} / ${fs_size /media/disk} $alignr ${fs_free_perc /media/disk}%
+${fs_bar /media/disk}
+
+/disk-1 $alignc ${fs_used /media/disk-1} / ${fs_size /media/disk-1} $alignr ${fs_free_perc /media/disk-1}%
+${fs_bar /media/disk-1}
+${font Arial:bold:size=10}${color Red1}TOP PROCESOS ${color white}${hr 2}
+${color white}$font${top_mem name 2}${alignr}${top mem 2} %
+$font${top_mem name 3}${alignr}${top mem 3} %
+$font${top_mem name 4}${alignr}${top mem 4} %
+$font${top_mem name 5}${alignr}${top mem 5} %
+$font${top_mem name 6}${alignr}${top mem 6} %
+${font Arial:bold:size=10}${color Red1}REDES ${color white}${hr 2}
+${color white}$color WLP9S0 ${color Red} on $color ${addr enp34s0}
+
+${color Red}Link Status ${color Red} on $color ${addr enp34s0}
+
+${color white}Down:${color Red} ${downspeed enp34s0} k/s${color white} ${offset 80}Up:${color Red} ${upspeed enp34s0} k/s
+
+${color #0000ff}${downspeedgraph wlp9s0 32,150 ff0000 0000ff} ${color #22ccff}${upspeedgraph enp34s0 32,150 0000ff ff0000}
+${offset 69}$color0${exec rhythmbox-client --print-playing-format %ta}$font${exec ret}
+${exec cp "`conkyRhythmbox --datatype=CA | sed -e 's/\\\//g'`" /media/abbde26b-62ff-428b-ada5-7dd5faee570f/home/Redrum/.album}${image /media/abbde26b-62ff-428b-ada5-7dd5faee570f/home/Redrum/.album -p 0,2 -s 64x64}
+${font Arial:bold:size=10}${color Red2}HORA ${color white}${hr 2}
+${color white} ${font :size=20}$alignc${time %H:%Mh}
+
+${voffset -20}${font :bold:size=10}$alignc${time %d %b. %Y}
+${font :bold:size=8}$alignc${time %A}
+${font Goudy Bookletter 1911:style=Bold}${font} ${hr 2}
